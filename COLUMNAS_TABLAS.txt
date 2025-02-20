@@ -1,0 +1,70 @@
+peliculas(id, titulo, descripcion, anio, imagen_url)
+genero(id, titulo)
+usuarios(id, username, password, email, telefono, id_cuenta)
+favoritos(id, id_usuario, id_peliculas, fecha_agregado)
+recuperar_peliculas(id, titulo, descripcion, anio, genero_id, imagen_url, fecha_eliminacion)
+peliculas_generos(id, pelicula_id, genero_id)
+
+---------------------------------------------------------------------------------
+				   CREAR TABLAS
+---------------------------------------------------------------------------------
+
+CREATE TABLE genero (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE peliculas (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descripcion TEXT,
+    anio INT NOT NULL,
+    genero_id INT NOT NULL,
+    imagen_url TEXT,
+    FOREIGN KEY (genero_id) REFERENCES genero(id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    telefono VARCHAR(20),
+    id_cuenta TEXT
+);
+
+
+CREATE TABLE favoritos (
+    id SERIAL PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_peliculas INT NOT NULL,
+    fecha_agregado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_peliculas) REFERENCES peliculas(id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE recuperar_peliculas (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descripcion TEXT,
+    anio INT NOT NULL,
+    genero_id INT NOT NULL,
+    imagen_url TEXT,
+    fecha_eliminacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE peliculas_generos (
+    id SERIAL PRIMARY KEY,
+    pelicula_id INT NOT NULL,
+    genero_id INT NOT NULL,
+    FOREIGN KEY (pelicula_id) REFERENCES peliculas(id) ON DELETE NO ACTION,
+    FOREIGN KEY (genero_id) REFERENCES genero(id) ON DELETE CASCADE,
+    UNIQUE (pelicula_id, genero_id)
+);
+
+---------------------------------------------------------------------------------
+			       DATOS DE LAS TABLAS
+---------------------------------------------------------------------------------

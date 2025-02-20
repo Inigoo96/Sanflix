@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SANFLIX - Restaurar Película</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/restaurarPeliculas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Favicon para navegadores -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../img/favicon_io/site.webmanifest">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <!-- Piso 1 -->
+            <div class="navbar-top">
+                <a href="dashboard.html" class="logo">SANFLIX</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                    <span id="nombre-usuario" class="username" hidden></span>
+            </div>
+    
+            <!-- Piso 2 -->
+            <div class="navbar-bottom">
+                <nav class="main-nav">
+                    <a href="administrarPeliculas.html" class="nav-link">
+                        <i class="fas fa-arrow-left"></i> Volver
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>  
+
+    <div class="main-background">
+        <main class="main-content">
+            <div class="form-container">
+                <div class="form-card">
+                    <h2>Restaurar Película</h2>
+                    <p>Selecciona una película para restaurarla.</p>
+
+                    <div id="peliculas-list" class="peliculas-list"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/restaurarPeliculas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

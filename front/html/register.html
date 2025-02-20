@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANFLIX - Registro</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon para navegadores -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../img/favicon_io/site.webmanifest">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="bg-overlay"></div>
+    <div class="light-effect"></div>
+    <nav class="navbar">
+        <a href="../index.html" class="logo">SANFLIX</a>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1>Regístrate</h1>
+            <form id="register-form">
+                <div class="input-group">
+                    <input type="text" id="register-username" required>
+                    <label for="register-nombre">Nombre</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="register-email" required>
+                    <label for="register-email">Correo Electrónico</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="telefono" id="register-telefono" required>
+                    <label for="register-telefono">Teléfono</label>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="register-password" required>
+                    <label for="register-password">Contraseña</label>
+                    <button type="button" class="toggle-password" aria-label="Mostrar contraseña">
+                        <i class="fas fa-eye"></i> <!-- Ícono de ojo abierto -->
+                    </button>   
+                </div>
+
+                <button type="submit" class="btn-login">Registrarse</button>
+                
+                <div id="register-error" class="error-message" role="alert"></div>
+                
+                <div class="auth-links">
+                    <div class="signup-link">
+                        ¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../js/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

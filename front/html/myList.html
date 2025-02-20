@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SANFLIX - Mi Lista</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon para navegadores -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../img/favicon_io/site.webmanifest">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <!-- Piso 1 -->
+            <div class="navbar-top">
+                <a href="dashboard.html" class="logo">SANFLIX</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                    <span id="nombre-usuario" class="username" hidden></span>
+            </div>
+    
+            <!-- Piso 2 -->
+            <div class="navbar-bottom">
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-link active">Inicio</a>
+                    <a href="#" class="nav-link">Series</a>
+                    <a href="#" class="nav-link">Películas</a>
+                    <a href="myList.html" class="nav-link">Mi Lista</a>
+                    <a href="administrarPeliculas.html" class="nav-link admin-panel" id="admin-panel">
+                        <i class="fas fa-cog"></i>
+                    </a>  
+                </nav>
+            </div>
+        </div>
+    </header>     
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="featured-content">
+                <h1>Tu Lista de Favoritos, <span id="nombre-usuario-hero"></span></h1>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Mis Favoritos</h2>
+            </div>
+            
+            <div id="contenedor-favoritos" class="movies-grid"></div>
+        </section>
+    </main>
+
+    <script src="../js/myList.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

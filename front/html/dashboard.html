@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SANFLIX - Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon para navegadores -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../img/favicon_io/site.webmanifest">
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <!-- Piso 1 -->
+            <div class="navbar-top">
+                <a href="dashboard.html" class="logo">SANFLIX</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+    
+            <!-- Menú de usuario con imagen de perfil (Movido fuera del navbar-top) -->
+            <div class="user-menu">
+                <span id="nombre-usuario" class="username"></span>
+                <div class="profile-container">
+                    <img id="imagen-perfil" class="profile-pic" src="" alt="">
+                        <div id="profile-card" class="profile-card hidden">
+                            <div class="input">
+                                <!-- Account -->
+                                <button class="value" onclick="window.location.href='perfilConfig.html'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                        <path d="m17.074 30h-2.148c-1.038 0-1.914-.811-1.994-1.846l-.125-1.635c-.687-.208-1.351-.484-1.985-.824l-1.246 1.067c-.788.677-1.98.631-2.715-.104l-1.52-1.52c-.734-.734-.78-1.927-.104-2.715l1.067-1.246c-.34-.635-.616-1.299-.824-1.985l-1.634-.125c-1.035-.079-1.846-.955-1.846-1.993v-2.148c0-1.038.811-1.914 1.846-1.994l1.635-.125c.208-.687.484-1.351.824-1.985l-1.068-1.247c-.676-.788-.631-1.98.104-2.715l1.52-1.52c.734-.734 1.927-.779 2.715-.104l1.246 1.067c.635-.34 1.299-.616 1.985-.824l.125-1.634c.08-1.034.956-1.845 1.994-1.845h2.148c1.038 0 1.914.811 1.994 1.846l.125 1.635c.687.208 1.351.484 1.985.824l1.246-1.067c.787-.676 1.98-.631 2.715.104l1.52 1.52c.734.734.78 1.927.104 2.715l-1.067 1.246c.34.635.616 1.299.824 1.985l1.634.125c1.035.079 1.846.955 1.846 1.993v2.148c0 1.038-.811 1.914-1.846 1.994l-1.635.125c-.208.687-.484 1.351-.824 1.985l1.067 1.246c.677.788.631 1.98-.104 2.715l-1.52 1.52c-.734.734-1.928.78-2.715.104l-1.246-1.067c-.635.34-1.299.616-1.985.824l-.125 1.634c-.079 1.035-.955 1.846-1.993 1.846z" fill="#7D8590"></path>
+                                    </svg>
+                                    Gestión de Cuenta
+                                </button>
+                        
+                                <!-- Notifications -->
+                                <button class="value">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+                                        <path fill-rule="evenodd" fill="#7D8590" d="m11.9572 4.31201c-3.35401 0-6.00906 2.59741-6.00906 5.67742v3.29037c0 .1986-.05916.3927-.16992.5576l-1.62529 2.4193-.01077.0157c-.18701.2673-.16653.5113-.07001.6868.10031.1825.31959.3528.67282.3528h14.52603c.2546 0 .5013-.1515.6391-.3968.1315-.2343.1117-.4475-.0118-.6093-.0065-.0085-.0129-.0171-.0191-.0258l-1.7269-2.4194c-.121-.1695-.186-.3726-.186-.5809v-3.29037c0-1.54561-.6851-3.023-1.7072-4.00431-1.1617-1.01594-2.6545-1.67311-4.3019-1.67311z"></path>
+                                    </svg>
+                                    Notificaciones
+                                </button>
+                        
+                                <!-- Botón de cerrar sesión -->
+                                <button id="logout-button" class="value logout-btn">
+                                    Cerrar Sesión
+                                </button>
+                            </div>
+                        </div>                                                 
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Piso 2 -->
+            <div class="navbar-bottom">
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-link active">Inicio</a>
+                    <a href="#" class="nav-link">Series</a>
+                    <a href="#" class="nav-link">Películas</a>
+                    <a href="myList.html" class="nav-link">Mi Lista</a>
+                    <a href="administrarPeliculas.html" class="nav-link admin-panel" id="admin-panel">
+                        <i class="fas fa-cog"></i>
+                    </a>  
+                </nav>
+    
+                <div class="search-container">
+                    <span class="search-toggle">Buscar <i class="fas fa-search"></i></span>
+                </div>
+    
+                <!-- Barra de búsqueda que se despliega a pantalla completa -->
+                <div class="search-overlay">
+                    <input type="text" id="input-titulo" placeholder="Buscar título..." class="search-input">
+                </div>
+    
+                <!-- Selector de género (se mantiene siempre visible) -->
+                <select id="select-genero" class="genre-select">
+                    <option value="">Todos los Géneros</option>
+                </select>                      
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="featured-content">
+                <h1>Bienvenido de nuevo, <span id="nombre-usuario-hero"></span></h1>
+                <!-- <p class="featured-subtitle">Descubre nuevo contenido</p> -->
+            </div>
+        </section>
+
+        <!-- Contenido Principal -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Catálogo</h2>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+        
+            <div id="contenedor-peliculas" class="list-view"> 
+                <!-- Acción Genre Row -->
+                <div class="fila-genero">
+                    <h2 class="titulo-genero">Acción</h2>
+                    <div class="fila-horizontal" data-genre="Acción">
+                        <!-- Movie cards go here -->
+                    </div>
+                    <button class="flecha-navegacion flecha-izquierda">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="flecha-navegacion flecha-derecha">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            
+                <!-- Ciencia Ficción Genre Row -->
+                <div class="fila-genero">
+                    <h2 class="titulo-genero">Ciencia Ficción</h2>
+                    <div class="fila-horizontal" data-genre="Ciencia Ficción">
+                        <!-- Movie cards go here -->
+                    </div>
+                    <button class="flecha-navegacion flecha-izquierda">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="flecha-navegacion flecha-derecha">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>                     
+        </section>        
+    </main>
+
+    <script type="module" src="../js/dashboard.js"></script>
+    <script>
+        if (window.location.pathname.includes("dashboard.html")) {
+            import("../js/utils/userProfile.js").then((module) => {
+                new module.default();
+            });
+        }
+    </script>    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

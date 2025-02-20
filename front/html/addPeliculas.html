@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SANFLIX - Añadir Película</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/addPeliculas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Favicon para navegadores -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../img/favicon_io/site.webmanifest">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <!-- Piso 1 -->
+            <div class="navbar-top">
+                <a href="dashboard.html" class="logo">SANFLIX</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                    <span id="nombre-usuario" class="username" hidden></span>
+            </div>
+    
+            <!-- Piso 2 -->
+            <div class="navbar-bottom">
+                <nav class="main-nav">
+                    <a href="administrarPeliculas.html" class="nav-link">
+                        <i class="fas fa-arrow-left"></i> Volver
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>    
+
+<div class="main-background">
+    <main class="main-content">
+        <div class="form-container">
+            <div class="form-card">
+                <h2>Añadir Nueva Película</h2>
+                <form id="form-pelicula">
+                    <div class="form-group">
+                        <label for="titulo">Título</label>
+                        <input type="text" id="titulo" name="titulo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="anio">Año</label>
+                            <input type="number" id="anio" name="anio" required min="1900" max="2024">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="genero">Género</label>
+                            <input type="text" id="genero" name="genero" required placeholder="Ej: Acción">
+                        </div>                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagen_url">URL de la imagen</label>
+                        <input type="url" id="imagen_url" name="imagen_url" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-plus"></i> Añadir Película
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+    <script src="../js/addPeliculas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

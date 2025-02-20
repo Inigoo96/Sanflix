@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANFLIX - Streaming de Series y Películas</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Favicon para navegadores -->
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon_io/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon_io/apple-touch-icon.png">
+        <link rel="manifest" href="./img/favicon_io/site.webmanifest">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">SANFLIX</a>
+            <div class="nav-right">             
+                <a href="html/login.html" class="btn-login">Iniciar Sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Películas y series sin límites y mucho más</h1>
+            <h2>Disfruta donde quieras. Cancela cuando quieras.</h2>
+            <p>¿Listo para ver? Ingresa tu email para crear una cuenta.</p>
+            <form class="email-form" id="email-form">
+                <div class="email-container">
+                    <input type="email" id="index-email" placeholder="Ingresa tu email">
+                    <button type="submit" class="btn-start">
+                        Empezar
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </form>   
+            
+        </div>
+        <div class="hero-shadow"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <div class="feature-text">
+                <h2>Disfruta en tu TV</h2>
+                <p>Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, reproductores Blu-ray y más.</p>
+            </div>
+            <div class="feature-media">
+                <img src="img/sanflixTV.webp" alt="TV" class="feature-img">
+                <div class="feature-animation"></div>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-media">
+                <img src="img/sanflixDescargar.webp" alt="Móvil" class="feature-img">
+                <div class="feature-animation"></div>
+            </div>
+            <div class="feature-text">
+                <h2>Descarga tus series</h2>
+                <p>Guarda tu contenido favorito y tendrás siempre algo para ver.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-text">
+                <h2>Donde quieras</h2>
+                <p>Películas y series ilimitadas en tu teléfono, tablet, computadora y TV.</p>
+            </div>
+            <div class="feature-media">
+                <img src="img/sanflixWhereUWant.webp" alt="Dispositivos" class="feature-img">
+                <div class="feature-animation"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Qué es SANFLIX?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>SANFLIX es un servicio de streaming que ofrece una amplia variedad de series, películas y documentales en dispositivos conectados a internet.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cuánto cuesta SANFLIX?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Disfruta de SANFLIX en tu smartphone, tablet, Smart TV, laptop o dispositivo de streaming, todo por una tarifa mensual única.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Dónde puedo ver SANFLIX?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Ve donde quieras, cuando quieras. Inicia sesión con tu cuenta de SANFLIX para ver contenido al instante a través de cualquier dispositivo conectado a internet.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cómo cancelo mi suscripción?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Puedes cancelar tu suscripción en cualquier momento desde la configuración de tu cuenta. No hay contratos ni compromisos.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿SANFLIX es adecuado para niños?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>SANFLIX ofrece una sección especial para niños con contenido adecuado para todas las edades. También puedes configurar controles parentales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-row">
+                <p>¿Preguntas? Llama al +34 628 089 730</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="#">Preguntas frecuentes</a>
+                    <a href="#">Inversores</a>
+                    <a href="#">Formas de ver</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#">Centro de ayuda</a>
+                    <a href="#">Empleo</a>
+                    <a href="#">Términos de uso</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#">Cuenta</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Contáctanos</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#">Prensa</a>
+                    <a href="#">Legal</a>
+                    <a href="#">Solo en SANFLIX</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">SANFLIX España</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index-front.js"></script>
+</body>
+</html>

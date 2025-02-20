@@ -1,0 +1,122 @@
+/* 🏛 General */
+.admin-main {
+    min-height: 100vh;
+    padding-top: 80px;
+    background-color: #0f0f0f; /* Un negro más puro, más serio */
+}
+
+/* Contenedor principal */
+.admin-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Título */
+.admin-container h1 {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Botones de administración */
+.admin-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: nowrap;
+}
+
+.admin-btn {
+    width: 260px;
+    height: 180px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.admin-btn i {
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+/* Estilos al pasar el mouse */
+.admin-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Colores más profesionales */
+.add-btn {
+    background: linear-gradient(145deg, #1f7a1f, #27ae60);
+}
+
+.delete-btn {
+    background: linear-gradient(145deg, #7a1f1f, #c0392b);
+}
+
+.modify-btn {
+    background: linear-gradient(145deg, #7a4f1f, #e67e22);
+}
+
+/* Restaurar Películas */
+.restore-btn {
+    background: linear-gradient(145deg, #1f4f7a, #2980b9);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 20px;
+    }
+
+    .admin-container h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .admin-btn {
+        width: 220px;
+        height: 140px;
+    }
+
+    .admin-btn i {
+        font-size: 2rem;
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-container {
+    animation: fadeIn 0.5s ease-out;
+}

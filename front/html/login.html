@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANFLIX - Iniciar Sesión</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <!-- Agregar en <head> si no lo tienes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon para navegadores -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../img/favicon_io/site.webmanifest">
+
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="bg-overlay"></div>
+    <div class="light-effect"></div>
+    <nav class="navbar">
+        <a href="../index.html" class="logo">SANFLIX</a>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1>Iniciar Sesión</h1>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="login-email" required>
+                    <label for="login-email">Correo Electrónico</label>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="login-password" required>
+                    <label for="login-password">Contraseña</label>
+                    <button type="button" class="toggle-password" aria-label="Mostrar contraseña">
+                        <i class="fas fa-eye"></i> <!-- Ícono de ojo abierto -->
+                    </button>                    
+                </div>
+
+                <button type="submit" class="btn-login">Iniciar Sesión</button>
+                
+                <div id="login-error" class="error-message" role="alert"></div>
+                
+                <div class="auth-links">
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    <div class="signup-link">
+                        ¿Nuevo en SANFLIX? <a href="register.html">Regístrate ahora</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../js/login.js"></script>
+</body>
+</html>

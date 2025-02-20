@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - SANFLIX</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/perfilConfig.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <!-- Piso 1 -->
+            <div class="navbar-top">
+                <a href="dashboard.html" class="logo">SANFLIX</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                    <span id="nombre-usuario" class="username" hidden></span>
+            </div>
+    
+            <!-- Piso 2 -->
+            <div class="navbar-bottom">
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-arrow-left"></i> Volver al Menú
+                    </a>                    
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="profile-container">
+        <div class="profile-content">
+            <!-- Sección de imagen de perfil -->
+            <section class="profile-image-section">
+                <h1 class="profile-title">Gestión de Cuenta</h1>
+                <div class="image-wrapper">
+                    <img id="imagen-perfil" class="profile-pic" 
+                         src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=User" 
+                         alt="Foto de perfil">
+                </div>
+                <div class="image-controls">
+                    <div class="upload-controls">
+                        <input type="file" id="image-upload" accept="image/*" class="hidden">
+                        <button class="btn btn-primary" id="upload-btn">
+                            <i class="fas fa-camera"></i>
+                            Cambiar imagen
+                        </button>
+                    </div>
+                    <div class="url-controls">
+                        <input type="text" id="image-url" 
+                               class="url-input" 
+                               placeholder="O pega URL de imagen">
+                        <button class="btn btn-success" id="save-image">
+                            <i class="fas fa-check"></i>
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Sección de datos del usuario -->
+            <section class="profile-details">
+                <div class="profile-field">
+                    <div class="field-header">
+                        <i class="fas fa-user"></i>
+                        <label for="username-input">Nombre de usuario</label>
+                    </div>
+                    <div class="field-content">
+                        <input type="text" id="username-input" class="form-input" disabled>
+                        <div class="field-actions">
+                            <button class="btn btn-edit" data-field="username">
+                                <i class="fas fa-pencil"></i>
+                                Modificar
+                            </button>
+                            <button class="btn btn-success btn-save hidden" data-field="username">
+                                <i class="fas fa-check"></i>
+                                Guardar
+                            </button>
+                            <button class="btn btn-danger btn-cancel hidden" data-field="username">
+                                <i class="fas fa-times"></i>
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="profile-field">
+                    <div class="field-header">
+                        <i class="fas fa-envelope"></i>
+                        <label for="email-input">Correo electrónico</label>
+                    </div>
+                    <div class="field-content">
+                        <input type="email" id="email-input" class="form-input" disabled>
+                        <div class="field-actions">
+                            <button class="btn btn-edit" data-field="email">
+                                <i class="fas fa-pencil"></i>
+                                Modificar
+                            </button>
+                            <button class="btn btn-success btn-save hidden" data-field="email">
+                                <i class="fas fa-check"></i>
+                                Guardar
+                            </button>
+                            <button class="btn btn-danger btn-cancel hidden" data-field="email">
+                                <i class="fas fa-times"></i>
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="profile-field">
+                    <div class="field-header">
+                        <i class="fas fa-phone"></i>
+                        <label for="phone-input">Teléfono</label>
+                    </div>
+                    <div class="field-content">
+                        <input type="tel" id="phone-input" class="form-input" disabled>
+                        <div class="field-actions">
+                            <button class="btn btn-edit" data-field="phone">
+                                <i class="fas fa-pencil"></i>
+                                Modificar
+                            </button>
+                            <button class="btn btn-success btn-save hidden" data-field="phone">
+                                <i class="fas fa-check"></i>
+                                Guardar
+                            </button>
+                            <button class="btn btn-danger btn-cancel hidden" data-field="phone">
+                                <i class="fas fa-times"></i>
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="profile-field">
+                    <div class="field-header">
+                        <i class="fas fa-lock"></i>
+                        <label for="password-input">Contraseña</label>
+                    </div>
+                    <div class="field-content">
+                        <input type="password" id="password-input" class="form-input" 
+                               placeholder="Nueva contraseña">
+                        <div class="field-actions">
+                            <button id="update-password-btn" class="btn btn-success">
+                                <i class="fas fa-check"></i>
+                                Cambiar
+                            </button>                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script type="module" src="../js/perfilConfig.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+/* Root Variables */
+:root {
+    --primary-color: #E50914;
+    --primary-hover: #f40612;
+    --text-color: #ffffff;
+    --text-secondary: #8c8c8c;
+    --text-tertiary: #b3b3b3;
+    --background-dark: #000000;
+    --input-background: #505050;
+    --input-background-focus: #505050;
+    --box-background: rgba(0, 0, 0, 0.75);
+    --error-color: #e87c03;
+    --transition-speed: 0.3s;
+    --border-radius: 4px;
+    --box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Netflix Sans', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    
+    /* Imagen de fondo */
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.8) 0%, 
+        rgba(0, 0, 0, 0.4) 60%, 
+        rgba(0, 0, 0, 0.8) 100%), 
+        url('../img/backgroundRed.jpg');
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax */
+}
+
+
+
+/* Navigation */
+.navbar {
+    padding: 1.25rem 3.125rem;
+    background: linear-gradient(180deg, 
+        rgba(0, 0, 0, 0.7) 0%, 
+        transparent 100%);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition-speed);
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+/* Authentication Container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 5rem);
+    padding: 1.25rem;
+}
+
+.auth-box {
+    background: rgba(0, 0, 0, 0.6); /* Antes 0.75, ahora más transparente */
+    padding: 3rem;
+    width: 100%;
+    max-width: 28.125rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px); /* Mantiene un efecto vidrioso */
+}
+
+.auth-box h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Form Elements */
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.15); /* Más transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+/* Add these new rules */
+.input-group input:-webkit-autofill,
+.input-group input:-webkit-autofill:hover,
+.input-group input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--text-color);
+    -webkit-box-shadow: 0 0 0px 1000px var(--input-background) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Added specific styles for name and phone inputs */
+.input-group input[type="text"],
+.input-group input[type="telefono"] {
+    letter-spacing: 0.5px;
+}
+
+.input-group input[type="telefono"] {
+    font-family: 'Courier New', monospace;
+}
+
+.input-group label {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    transition: all var(--transition-speed);
+    pointer-events: none;
+    padding: 0 0.3125rem;
+}
+
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+    background: rgba(255, 255, 255, 0.2); /* Un poco menos transparente al enfocar */
+    border: 1px solid #fff;
+    outline: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 0;
+    transform: translateY(-50%) scale(0.9);
+    background: var(--input-background-focus);
+}
+
+/* Adjust spacing for registration form */
+#register-form .input-group {
+    margin-bottom: 1.25rem;
+}
+
+#register-form .btn-login {
+    margin-top: 2rem;
+}
+
+/* Password Toggle Button */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.toggle-password {
+    z-index: 10 !important; /* Asegurar que esté encima del input */
+}
+
+.toggle-password:hover {
+    color: #fff;
+}
+
+
+/* Login Button */
+.btn-login {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: #e50914; /* Rojo de Netflix */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-login:hover {
+    background: #ff0a16;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+/* Links */
+.auth-links {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.auth-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.auth-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+.forgot-password {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.signup-link {
+    color: var(--text-secondary);
+}
+
+.signup-link a {
+    color: var(--text-color);
+    margin-left: 0.3125rem;
+}
+
+.light-effect {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(rgba(255, 0, 0, 0.4), transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Error Message */
+.error-message {
+    color: var(--error-color);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: left;
+    display: none;
+}
+
+.error-message.visible {
+    display: block;
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-0.625rem); }
+    75% { transform: translateX(0.625rem); }
+}
+
+/* Responsive Design */
+@media (max-width: 46.25rem) {
+    .navbar {
+        padding: 1rem 1.25rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .auth-box {
+        padding: 2.5rem 1.875rem;
+        margin: 0 1.25rem;
+    }
+
+    .auth-box h1 {
+        font-size: 1.75rem;
+    }
+
+    .input-group input {
+        padding: 0.875rem 1rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .bg-animation,
+    .bg-overlay,
+    .light-effect {
+        display: none;
+    }
+
+    .auth-box {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}

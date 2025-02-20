@@ -1,0 +1,119 @@
+/* Fondo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar con efecto translúcido */
+.navbar {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(15, 15, 15, 0.5);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Fondo del contenido */
+.main-background {
+    flex: 1;
+    background: url('../img/backgroundRed.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.main-content {
+    background: none;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Tarjeta del formulario */
+.form-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+}
+
+.form-card {
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.76) 0%, rgba(40, 40, 40, 0.226) 100%);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(15px);
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Efecto de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Lista de películas */
+.peliculas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Elemento de la lista */
+.pelicula-item {
+    display: flex;
+    align-items: center;
+    background: rgba(40, 40, 40, 0.95);
+    border-radius: 6px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Imagen de la película */
+.pelicula-item img {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+/* Información de la película */
+.pelicula-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Botón de restaurar */
+.btn-restore {
+    background: #1f4f7a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Efecto hover del botón */
+.btn-restore:hover {
+    background: #28a745;
+}
