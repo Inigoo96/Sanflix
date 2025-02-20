@@ -4,7 +4,6 @@ usuarios(id, username, password, email, telefono, id_cuenta)
 favoritos(id, id_usuario, id_peliculas, fecha_agregado)
 recuperar_peliculas(id, titulo, descripcion, anio, genero_id, imagen_url, fecha_eliminacion)
 peliculas_generos(id, pelicula_id, genero_id)
-
 ---------------------------------------------------------------------------------
 				   CREAR TABLAS
 ---------------------------------------------------------------------------------
@@ -66,5 +65,8 @@ CREATE TABLE peliculas_generos (
 );
 
 ---------------------------------------------------------------------------------
-			       DATOS DE LAS TABLAS
+			COMANDOS ACTUALIZAR PROYECTO EN GITHUB
 ---------------------------------------------------------------------------------
+git add .
+git commit -m "Descripción del cambio"
+git push
